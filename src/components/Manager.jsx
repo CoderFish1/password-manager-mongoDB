@@ -52,8 +52,6 @@ const Manager = () => {
      if (form.site.length>3 && form.username.length>3 && form.password.length>3) {
       const newPassword = { ...form, id: uuidv4() };
     setPasswordArray([...passwordArray, newPassword]);
-    // if any password exisits with same id then delete it and add new one(for edit functionality)
-    // Only delete if editing (form.id exists)
 
     await fetch("http://localhost:3000/", {
       method: "POST",
